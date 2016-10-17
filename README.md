@@ -74,7 +74,7 @@ There are no scheduling options currently available in the javascript API. If yo
 
 ### Running Tests
 
-Since we depend on B2 in order for this to work, you need a B2 account in order to run the tests. In order to add your b2 account details, make a copy of `test/.env.sample` and remove the `.sample`, then fill it in with your account details. Make sure that you make a new bucket for testing specifically.
+Since we depend on B2 in order for this to work, you need a B2 account in order to run the tests. In order to add your b2 account details, run `cp test/.env.sample test/.env`, then fill in `test/.env` with your account details. Make sure that you make a new bucket for testing specifically.
 
 ### License & Contributing
 
