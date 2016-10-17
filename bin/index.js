@@ -4,6 +4,8 @@ const PgBackup = require('..')
 const program = require('commander')
 const Configstore = require('configstore')
 const chalk = require('chalk')
+const node = require('when/node')
+const exec = node.lift(require('child_process').exec)
 const cron = require('../lib/cron')
 const pkg = require('../package.json')
 const store = new Configstore(pkg.name)
@@ -52,10 +54,14 @@ if (Object.keys(allConfig).length < 3) {
     if (!timing) {
       errorLog('schedule must be "hourly", "daily", "weekly", or "monthly"')
     } else {
-      cron.add(`${timing} pg-backup ${program.dbname}`)
+      addCronJob(`${timing} pg-backup ${program.dbname}`)
         .done(() => successLog(`scheduled to back up ${schedule}`))
     }
   }
+}
+
+function addCronJob (cmd) {
+  return exec(`echo "${cmd}" | crontab -`)
 }
 
 function successLog (msg) {
