@@ -1,0 +1,36 @@
+{
+  "name": "pg-backup",
+  "description": "a small tool for backing up databases to backblaze b2",
+  "version": "0.0.0",
+  "author": "Jeff Escalante",
+  "ava": {
+    "verbose": "true"
+  },
+  "bugs": "https://github.com/carrot/pg-backup/issues",
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "coveralls": "^2.11.12",
+    "dotenv": "^2.0.0",
+    "nyc": "^8.1.0",
+    "snazzy": "^4.0.1",
+    "standard": "^7.1.2"
+  },
+  "engines": {
+    "node": ">= 6"
+  },
+  "homepage": "https://github.com/carrot/pg-backup",
+  "license": "MIT",
+  "main": "lib",
+  "repository": "carrot/pg-backup",
+  "scripts": {
+    "test": "nyc ava",
+    "lint": "standard | snazzy",
+    "coverage": "nyc ava && nyc report --reporter=html && open ./coverage/index.html",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "dependencies": {
+    "backblaze-b2": "^0.9.11",
+    "commander": "^2.9.0",
+    "when": "^3.7.7"
+  }
+}
