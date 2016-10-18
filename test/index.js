@@ -10,12 +10,18 @@ test('basic', (t) => {
     bucketId: process.env.B2_BUCKET_ID
   })
 
-  return backup.run({ name: 'postgres' }).then(console.log)
+  return backup.run({ name: 'postgres' })
 })
 
 test('cli error', (t) => {
   return runCli('-n foo').then((res) => {
     t.is(res[0].error, 'error backing up')
+  })
+})
+
+test('cli', (t) => {
+  return runCli(`-a ${process.env.B2_ACCOUNT_ID} -k ${process.env.B2_APPLICATION_KEY} -b ${process.env.B2_BUCKET_ID} -n postgres`).then((res) => {
+    t.is(res[0].success, 'database "postgres" backed up')
   })
 })
 
