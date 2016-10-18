@@ -6,7 +6,9 @@
   "ava": {
     "verbose": "true"
   },
-  "bin": "bin",
+  "bin": {
+    "pg_backup": "./bin/index.js"
+  },
   "bugs": "https://github.com/carrot/pg-backup/issues",
   "dependencies": {
     "backblaze-b2": "^0.9.11",
