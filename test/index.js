@@ -1,5 +1,6 @@
 require('dotenv').config()
 const PgBackup = require('..')
+const cli = require('../lib/cli')
 const test = require('ava')
 
 test('basic', (t) => {
@@ -11,3 +12,16 @@ test('basic', (t) => {
 
   return backup.run({ name: 'postgres' }).then(console.log)
 })
+
+test('cli error', (t) => {
+  return runCli('-n foo').then((res) => {
+    t.is(res[0].error, 'error backing up')
+  })
+})
+
+function runCli (str) {
+  const arr = str.split(' ')
+  arr.unshift('/usr/local/bin/node')
+  arr.unshift('path/to/bin')
+  return cli(arr)
+}

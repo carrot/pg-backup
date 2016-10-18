@@ -38,13 +38,13 @@ You can get the account id and application key from [the b2 dashboard](https://s
 You can change your configuration details at any time. Once you have successfully authenticated, you can start backing up your databases. Test it out by backing up a database one time, manually, as such:
 
 ```sh
-$ pg-backup --name database-name
+$ pg-backup --dbname database-name
 ```
 
 If you'd like to have the database backed up at regular intervals, you can use the `--schedule` option. For example:
 
 ```sh
-$ pg-backup --name database-name --schedule daily
+$ pg-backup --dbname database-name --schedule daily
 ```
 
 You can have databases backed up `hourly`, `daily`, `weekly`, and `monthly`. Note that `pg-backup` will simply create a cron script to run these backups, so you must have crontab active and working in order to use the schedule option.
