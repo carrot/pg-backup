@@ -1,9 +1,9 @@
 # pg-backup
 
-[![npm](https://img.shields.io/npm/v/db-backup.svg?style=flat-square)](https://npmjs.com/package/db-backup)
-[![tests](https://img.shields.io/travis/carrot/db-backup.svg?style=flat-square)](https://travis-ci.org/carrot/db-backup?branch=master)
-[![dependencies](https://img.shields.io/david/carrot/db-backup.svg?style=flat-square)](https://david-dm.org/carrot/db-backup)
-[![coverage](https://img.shields.io/coveralls/carrot/db-backup.svg?style=flat-square)](https://coveralls.io/r/carrot/db-backup?branch=master)
+[![npm](https://img.shields.io/npm/v/pg-backup.svg?style=flat-square)](https://npmjs.com/package/pg-backup)
+[![tests](https://img.shields.io/travis/carrot/pg-backup.svg?style=flat-square)](https://travis-ci.org/carrot/pg-backup?branch=master)
+[![dependencies](https://img.shields.io/david/carrot/pg-backup.svg?style=flat-square)](https://david-dm.org/carrot/pg-backup)
+[![coverage](https://img.shields.io/coveralls/carrot/pg-backup.svg?style=flat-square)](https://coveralls.io/r/carrot/pg-backup?branch=master)
 
 a small tool for backing up postgres databases to backblaze b2
 
